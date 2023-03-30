@@ -1,5 +1,9 @@
-// All Section data goes here
+//所有部分数据都在这里
 let SectionData = {
+  // logo 数据
+  // imgClass属性表示logo图片的class属性，用于在应用样式表中进行样式设置，以控制logo图片的大小、位置等视觉效果。
+  // logoImg属性表示logo图片的具体路径信息，使用require方法引用了项目中的图片资源。
+  // path属性表示logo图片点击后的跳转路径，这里设置为了“/home”这个链接。
   logoData: [
     {
       imgClass: "logo-dark",
@@ -69,84 +73,85 @@ let SectionData = {
       content: "If you are working with any type of Digital NFT Marketplace, and Development Firm for every industry then EnftyMat.",
     },
   ],
-  // Breadcrumb data
-  breadcrumbData: {
-    breadcrumbList: {
-      title: "Explore",
-      navList: [
-        {
-          title: "Explore",
-        },
-      ],
+    // Breadcrumb data
+    // 面包屑导航（Breadcrumb）数据进行定义和定制，面包屑导航在网页设计中是一种非常常见的导航形式，它能够有效地辅助用户理解当前页面的位置和层级关系
+    breadcrumbData: {
+      breadcrumbList: {
+        title: "Explore",
+        navList: [
+          {
+            title: "Explore",
+          },
+        ],
+      },
+      breadcrumbListTwo: {
+        title: "Activity",
+        navList: [
+          {
+            title: "Activity",
+          },
+        ],
+      },
+      breadcrumbListThree: {
+        title: "Ranking",
+        navList: [
+          {
+            title: "Ranking",
+          },
+        ],
+      },
+      breadcrumbListFour: {
+        title: "Connect Wallet",
+        navList: [
+          {
+            title: "Wallet",
+          },
+        ],
+      },
+      breadcrumbListFive: {
+        title: "Private Gallery",
+        navList: [
+          {
+            title: "Private Gallery",
+          },
+        ],
+      },
+      breadcrumbListExhibition: {
+        title: "Exhibition",
+        navList: [
+          {
+            title: "Exhibition",
+          },
+        ],
+      },
+      breadcrumbListPrivateCreate: {
+        title: "Private Gallery Create",
+        navList: [
+          {
+            title: "Private Gallery Create",
+          },
+        ],
+      },
+      breadcrumbListSix: {
+        title: "Enter Linda Dounia's Cyber Baat World",
+        navList: [
+          {
+            title: "Blog",
+          },
+          {
+            title: "Enter Linda Dounia...",
+          },
+        ],
+      },
+      breadcrumbListSeven: {
+        title: "How can we help?",
+        navList: [
+          {
+            title: "Contact",
+          },
+        ],
+      },
     },
-    breadcrumbListTwo: {
-      title: "Activity",
-      navList: [
-        {
-          title: "Activity",
-        },
-      ],
-    },
-    breadcrumbListThree: {
-      title: "Ranking",
-      navList: [
-        {
-          title: "Ranking",
-        },
-      ],
-    },
-    breadcrumbListFour: {
-      title: "Connect Wallet",
-      navList: [
-        {
-          title: "Wallet",
-        },
-      ],
-    },
-    breadcrumbListFive: {
-      title: "Private Gallery",
-      navList: [
-        {
-          title: "Private Gallery",
-        },
-      ],
-    },
-    breadcrumbListExhibition: {
-      title: "Exhibition",
-      navList: [
-        {
-          title: "Exhibition",
-        },
-      ],
-    },
-    breadcrumbListPrivateCreate: {
-      title: "Private Gallery Create",
-      navList: [
-        {
-          title: "Private Gallery Create",
-        },
-      ],
-    },
-    breadcrumbListSix: {
-      title: "Enter Linda Dounia's Cyber Baat World",
-      navList: [
-        {
-          title: "Blog",
-        },
-        {
-          title: "Enter Linda Dounia...",
-        },
-      ],
-    },
-    breadcrumbListSeven: {
-      title: "How can we help?",
-      navList: [
-        {
-          title: "Contact",
-        },
-      ],
-    },
-  },
   // Button group data
   btnData: [
     {

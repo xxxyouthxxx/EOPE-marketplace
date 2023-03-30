@@ -187,6 +187,7 @@ export default createStore({
           alert("密码不匹配或您已经注册。");
         });
     },
+    // 修改钱包地址
     myAddress: function ({ commit }, credentials) {
       let address = credentials;
       axios({
@@ -200,10 +201,10 @@ export default createStore({
         },
       })
         .then((res) => {
-          console.log("성공");
+          console.log("成功");
         })
         .catch(() => {
-          alert("실패");
+          alert("失败");
         });
       commit("SET_ADDRESS", address);
     },
@@ -235,15 +236,19 @@ export default createStore({
         });
     },
   },
+  // getter属性，用于获取当前用户的登录状态、请求头部信息和用户名信息。
   getters: {
+    // 判断用户的authToken属性是否存在，若存在则返回true，说明用户已登录，反之则返回false。
     isLogin: function (state) {
       return state.authToken ? true : false;
     },
+    // 返回一个包含Authorization信息的对象，用于在axios请求头部中传递用户的token信息
     config: function (state) {
       return {
         Authorization: `JWT ${state.authToken}`,
       };
     },
+    // 返回当前用户的用户名信息，方便在应用中进行调用。
     myUsername: function (state) {
       return state.username;
     },
