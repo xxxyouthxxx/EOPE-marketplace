@@ -8,7 +8,7 @@
              </a>
             <div class="dropdown-menu dropdown-menu-end card-generic">
                 <div class="input-group">
-                    <input type="search" class="form-control form-control-s1" placeholder="Search item here...">
+                    <input type="search" class="form-control form-control-s1" placeholder="在这里搜索项目...">
                     <a href="#" class="btn btn-sm btn-outline-secondary"><em class="ni ni-search"></em></a>
                  </div>
             </div>

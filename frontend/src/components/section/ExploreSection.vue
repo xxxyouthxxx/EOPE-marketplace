@@ -1,14 +1,6 @@
 <template>
   <section class="explore-section pt-4">
     <div class="container">
-      <!-- filter -->
-      <div class="filter-box pb-5">
-        <h3 class="mb-4">Filter by</h3>
-        <div class="filter-btn-group">
-          <a href="#" class="btn btn-sm filter-btn" :class="tab.class" v-for="tab in filterMenu" @click.prevent="setTab(tab, tab.id)" :key="tab.id">{{ tab.title }}</a>
-        </div>
-      </div>
-      <!-- end filter-box -->
       <div class="row g-gs">
         <div class="col-xl-3 col-lg-4 col-sm-6" v-for="product in displayedRecords" :key="product.id">
           <Products class="button" :product="product"></Products>

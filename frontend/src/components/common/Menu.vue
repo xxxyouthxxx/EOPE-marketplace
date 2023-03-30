@@ -5,9 +5,6 @@
     <!-- header btn -->
     <ul class="menu-btns menu-btns-2">
       <!-- <li><ButtonLink :text="SectionData.headerData.btnText" :link="`/profile/${userId}`" classname="btn" :class="classname"></ButtonLink></li> -->
-      <li class="d-none d-lg-inline-block">
-        <p class="icon-btn icon-btn-s1" @click="moveToWallet" title="Wallet"><em class="ni ni-wallet"></em></p>
-      </li>
       <li class="d-none d-lg-inline-block dropdown">
         <button type="button" class="icon-btn icon-btn-s1" data-bs-toggle="dropdown"><em class="ni ni-user"></em></button>
         <ul class="dropdown-menu card-generic card-generic-s3 dropdown-menu-end mt-2">

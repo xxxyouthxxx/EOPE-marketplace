@@ -37,8 +37,8 @@ export default {
   data() {
     return {
       SectionData,
-      title: "Featured Aritists in Unique",
-      content: "Here are four featured artists in Unique. They are most popular artists and artists who have been recieved many good comments by Users",
+      title: "他们的代表作",
+      content: "这是四位网站中的特殊作品。他们是最受欢迎的艺术家和受到用户好评的艺术家",
       featuredList: [
         {
           nftImage:'https://pic.imgdb.cn/item/640eb292f144a0100710079a.png',

@@ -1,6 +1,6 @@
 <template>
     <div class="header-search-form" :class="classname">
-        <input type="search" class="form-control form-control-s1" placeholder="Search item here...">
+        <input type="search" class="form-control form-control-s1" placeholder="在这里搜索项目...">
     </div>
 </template>
 <script>
