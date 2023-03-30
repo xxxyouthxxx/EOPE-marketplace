@@ -34,7 +34,7 @@
 </template>
 
 <script>
-// Import component data. You can change the data in the store to reflect in all component
+// 导入组件数据。您可以更改商店中的数据以反映在所有组件中
 import SectionData from "@/store/store.js";
 import MainCarousel from "@/components/section/MainCarousel.vue";
 

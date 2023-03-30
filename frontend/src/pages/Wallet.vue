@@ -71,7 +71,7 @@
     <!-- Footer  -->
     <Footer classname="bg-black on-dark"></Footer>
     <!-- first Modal -->
-    <!-- 등록하려는 아이템의 제목, 설명, 파일이 모두 있을 때 다음 모달로 -->
+    <!--当要注册的项目的标题、描述、文件都存在时，进入下一个模态-->
   </div>
   <!-- end page-wrap -->
 </template>
@@ -93,7 +93,7 @@ const NFT_ABI = SsafyNFT.abi;
 // const NFT_CA = "0x6c927304104cdaa5a8b3691e0ade8a3ded41a333";
 const NFT_CA = SsafyNFT.networks["202112031219"].address;
 
-// 네트워크 연결
+//网络连接
 const GANACHE_SERVER_URL = "http://20.196.209.2:8545";
 
 let web3 = new Web3(new Web3.providers.HttpProvider(GANACHE_SERVER_URL)); // let Web3 = require("web3");
@@ -129,7 +129,7 @@ export default {
           Authorization: this.authToken,
         },
       }).then((res) => {
-        // console.log(res, "내금액");
+        // console.log(res, "我的金额");
         this.balanceOf = res.data.ssf;
       });
     },

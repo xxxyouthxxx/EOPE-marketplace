@@ -1,6 +1,6 @@
 /*
-[에러 공통 사항]
-- 기능이 제대로 처리되지 않은 경우 반환하는 에러 메시지의 공통 예외처리 내용입니다.
+[常见错误]
+-这些是当函数未正确处理时返回的错误消息的常见异常处理内容。
 */
 export function onResponse(err) {
   const errMsg = err.response.data.message;

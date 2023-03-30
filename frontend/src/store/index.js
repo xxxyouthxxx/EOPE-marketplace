@@ -10,16 +10,17 @@ const SERVER_URL = process.env.VUE_APP_SERVER_URL;
 const GANACHE_SERVER_URL = "http://20.196.209.2:8545";
 
 let web3 = new Web3(new Web3.providers.HttpProvider(GANACHE_SERVER_URL));
-
+// 下面的 createStore 是用于创建一个 store 对象，这个对象是用于存储数据的
 export default createStore({
-  plugins: [createPersistedState()],
+  plugins: [createPersistedState()],  // localStorage的存储，createPersistedState()是一个插件,用于将vuex中的数据存储到localStorage中
+  // state 内部存储的是数据，类似于组件中的 data
   state: {
-    authToken: localStorage.getItem("jwt"),
-    username: null,
-    myAddress: null,
-    userId: null,
-    password: null,
-    ExhibitionsCards: [
+    authToken: localStorage.getItem("jwt"), // 从localStorage中获取token
+    username: null,   // 用户名
+    myAddress: null,  // 用户地址
+    userId: null,     // 用户id
+    password: null,   // 用户密码
+    ExhibitionsCards: [ // 展览卡片
       {
         id: 1,
         dateDay: 1,
@@ -73,6 +74,11 @@ export default createStore({
       },
     ],
   },
+  // mutations内存放的是方法，方法的第一个参数是state，第二个参数是传递过来的参数，
+  // 这里的参数是token，也就是我们登录成功后返回的token，
+  // 我们将token存储到state中，同时也存储到localStorage中，
+  // 这样我们就可以在页面刷新的时候从localStorage中获取token，
+  // 然后将token赋值给state，这样我们就不用每次都登录了。
   mutations: {
     SET_TOKEN: function (state, token) {
       state.authToken = token;
@@ -108,67 +114,42 @@ export default createStore({
     //   state.ExhibitionsCards = cards;
     // },
   },
+  // actions内存放的是方法
   actions: {
-    // async registerWeb3({ commit }) {
-    //   console.log("registerWeb3 Action being executed");
-    //   try {
-    //     let result = await getWeb3;
-    //     console.log("registerWeb3Instance", result);
-    //     commit("registerWeb3Instance", result);
-    //   } catch (err) {
-    //     console.log("error in action registerWeb3", err);
-    //   }
-    // },
-    // EXHIBITION_CARDS: function ({ commit }) {
-    //   commit("EXHIBITION_CARDS");
-    //   // router.push({ name: "Login" });
-    // },
+    // 这里的方法是登录的方法，第一个参数是context，我们可以通过context.state获取stat
     login: function ({ commit }, credentials) {
-      console.log(credentials, "credentials");
-      // if (credentials)
+      console.log(credentials, "证书");
+      // 调用axios的post方法
       axios({
-        method: "post",
-        url: `${SERVER_URL}/api/members/login`,
+        method: "post",  // 请求方法
+        url: `${SERVER_URL}/api/members/login`,  // 这里是我们的接口地址
         data: {
+          // 这里是我们要传递的参数
           memberId: credentials.memberId,
           memberPassword: credentials.memberPassword,
         },
       })
-        .then((res) => {
-          console.log(res, "여긴데여");
-          if (res.data.memberAddress) {
-            commit("SET_TOKEN", res.headers.authorization);
-            commit("SET_USERNAME", credentials);
-            // if (!res.data.memberAddress) {
-            //   const result = wallet();
-            //   console.log(result, " 나온건가");
-            // }
-            // 여기 없으니까 안됨
-            commit("SET_ADDRESS", res.data.memberAddress);
+        .then((res) => {  // 这里是我们请求成功后返回的数据
+          console.log(res, "我在这里"); // 我们可以在控制台打印一下，看看我们返回的数据
+          if (res.data.memberAddress) {  // 如果返回的数据中有token，那么就将token存储到localStorage中
+            commit("SET_TOKEN", res.headers.authorization); 
+            commit("SET_USERNAME", credentials); 
+            commit("SET_ADDRESS", res.data.memberAddress); 
             commit("SET_ID", res.data.memberSeq);
             router.push({ name: "Home" });
-          } else {
+          } else { // 否则通过dispatch调用wallet获取token
             this.dispatch("wallet");
             commit("SET_TOKEN", res.headers.authorization);
             commit("SET_USERNAME", credentials);
             commit("SET_ID", res.data.memberSeq);
-            // if (!res.data.memberAddress) {
-            //   const result = wallet();
-            //   console.log(result, " 나온건가");
-            // }
-            // 여기 없으니까 안됨
-            // commit("SET_ADDRESS", res.data.memberAddress);
             router.push({ name: "Home" });
           }
-          // wallet;
-
-          // console.log(this.getters.isLogin);
-          // console.log(res.data, " 요기요");
         })
         .catch(() => {
-          alert("로그인 정보가 일치하지 않습니다.");
+          alert("登录信息不匹配。");
         });
     },
+    // logout用于退出登录，我们将token从localStorage中移除，同时将state中的token置为空
     logout: function ({ commit }) {
       commit("REMOVE_TOKEN");
       commit("REMOVE_ADDRESS");
@@ -177,6 +158,12 @@ export default createStore({
       router.push({ name: "Home" });
       // router.push({ name: "Login" });
     },
+    // 通过调用axios发送POST请求，向服务器发送一个包含用户注册信息的FormData对象，并使用Content-Type头部指定了媒体类型为multipart/form-data。
+    // 在请求成功时，通过dispatch方法调用了Vuex中的login action，将用户的注册信息传递给login方法进行登录验证。
+    // 如果请求失败，则弹出一个提示框，提示用户注册失败的原因。
+    // 在具体实现中，credentials对象包含了用户注册时填写的信息，包括会员ID、会员密码、会员个人简介和用户上传的头像文件等。
+    // FormData对象用于处理多部分数据，可以让我们方便地向服务器传递包含文件上传的表单数据。
+    // axios将该对象作为data属性的值传递给POST请求，发送给服务器进行处理。
     signup: function ({ commit }, credentials) {
       let data = new FormData();
       data.append("memberId", credentials.memberId);
@@ -193,11 +180,11 @@ export default createStore({
         data: data,
       })
         .then((res) => {
-          console.log("계좌 생성 성공");
+          console.log("账户创建成功");
           this.dispatch("login", credentials);
         })
         .catch(() => {
-          alert("비밀번호가 일치하지 않거나 이미 가입되어 있습니다.");
+          alert("密码不匹配或您已经注册。");
         });
     },
     myAddress: function ({ commit }, credentials) {

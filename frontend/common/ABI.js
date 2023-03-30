@@ -1,9 +1,9 @@
 /* 
-[컨트랙트 ABI]
-- 작성한 스마트 컨트랙트의 컴파일 결과로부터 얻은 ABI(in JSON)를 복사하여 붙여넣습니다.
-- NFT_ABI: SSAFY NFT 컨트랙트 ABI
-- SALE_FACTORY_ABI: SALE Factory 컨트랙트 ABI
-- SALE_ABI: SALE 컨트랙트 ABI
+[合约ABI]
+-复制并粘贴从已编译的智能合约中获取的 ABI（JSON 格式）。
+-NFT_ABI：SSAFY NFT 合约 ABI
+-SALE_FACTORY_ABI：销售工厂合同 ABI
+-SALE_ABI：销售合约ABI
 */
 import SsafyNFT from "../../smart-contracts/build/contracts/SsafyNFT.json";
 import SsafyToken from "../../smart-contracts/build/contracts/SsafyToken.json";

@@ -4,10 +4,10 @@
 //Nioicon
 $ni-font: "Nioicon";
 
-// Fonts path
+// 字体路径
 $font-path: "../fonts/";
 
-//Theme font
+//主题字体
 $theme-font: "Poppins", sans-serif;
 
 //Logo
@@ -17,7 +17,7 @@ $logo-height-lg: 100px;
 
 $header-main-gap-y: 0.5rem;
 
-//Menu gap
+//菜单差距
 $menu-item-gap-x: 1.5rem;
 $menu-item-gap-y: 0.5rem;
 $menu-item-gap-x-desk: 1rem;
@@ -29,14 +29,14 @@ $header-main-gap-y: 14px;
 $header-main-border-width: 1px;
 $header-height: ($header-main-gap-y * 2 + $logo-height + $header-main-border-width);
 
-//font weight
+//font weight 是什么意思
 $fw-light: 300;
 $fw-regular: 400;
 $fw-medium: 500;
 $fw-semibold: 600;
 $fw-bold: 700;
 
-/* theme font size */
+/*主题字体大小*/
 
 $fs-3: 3.125rem; // 50px
 $fs-4: 2.813rem; // 45px
@@ -141,11 +141,10 @@ $border-radius: 6px;
 @import "./node_modules/bootstrap/scss/functions";
 @import "./node_modules/bootstrap/scss/mixins";
 
-// Grid breakpoints
-// Define the minimum dimensions at which your layout will change,
-// adapting to different screen sizes, for use in media queries.
-
-// scss-docs-start grid-breakpoints
+//网格断点
+//定义布局将更改的最小尺寸，
+//适应不同的屏幕尺寸，用于媒体查询。
+//scss-docs-start 网格断点
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,

@@ -13,8 +13,7 @@ $ npm i
 ### ```truffle-config.js``` 설정
 
 <br/>
-아래 부분을 테스트 환경에 맞게 변경
-
+更改以下部分以适合您的测试环境
 ```js
 module.exports = {
   networks: {
@@ -28,23 +27,23 @@ module.exports = {
 }
 ```
 
-위 --network 옵션을 지정하지 않고 truffle test 실행  시, "development"를 기본으로 지정함.
+在未指定上述 --network 选项的情况下运行 truffle test 时，“development”被指定为默认值。
 
 ```bash
 $ truffle test --network <network-name>
 ```
 <br/>
 
-### 기본 사용법
+### 基本用法
 
 ```bash
-$ truffle compile # 컨트랙트 컴파일
-$ truffle migrate # 컨트랙트 배포
-$ truffle test # 컨트랙트 테스트
+$ truffle compile # 合同编制
+$ truffle migrate # 部署合约
+$ truffle test # 合同测试
 ```
 
 
-#### 테스트 코드 실행 예
+#### 运行测试代码示例
 
 ```bash
 $ truffle test ./test/NFTCreateorTest.js

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div>조성현123</div>
+    <div>123</div>
     <hr />
-    <button @click="getItemsAll">전체 데이터 가져오기</button>
+    <button @click="getItemsAll">获取完整数据</button>
     <ul v-for="item in items" :key="item">
       <li>{{ item.nftName }}</li>
       <li>{{ item.nftDescription }}</li>
@@ -14,7 +14,7 @@
     <hr />
     <input type="text" v-model="inputaddress" />
     <div>{{ inputaddress }}</div>
-    <button @click="getItmesByAddress(inputaddress)">주소로 데이터 가져오기</button>
+    <button @click="getItmesByAddress(inputaddress)">按地址获取数据</button>
     <ul v-for="aitem in aitems" :key="aitem">
       <li>{{ aitem.nftName }}</li>
       <li>{{ aitem.nftDescription }}</li>
@@ -25,7 +25,7 @@
     </ul>
     <hr />
     <div>{{ exampleTokenId }}</div>
-    <button @click="getDetail(exampleTokenId)">해당 작품 detail 가져오기</button>
+    <button @click="getDetail(exampleTokenId)">获取工作详情</button>
     <div>{{ exampleResult.nftName }}</div>
     <div>{{ exampleResult.nftDescription }}</div>
     <div>{{ exampleResult.nftType }}</div>
