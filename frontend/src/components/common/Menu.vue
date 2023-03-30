@@ -124,7 +124,7 @@ export default {
           }
         })
       }else {
-        alert('로그인을 해주세요');
+        alert('请登录');
         this.$router.push({
           name: "login",
         })
@@ -139,7 +139,7 @@ export default {
           // },
         });
       } else {
-        alert("로그인을 해주세요");
+        alert("请登录");
         this.$router.push({
           name: "login",
         });

@@ -43,7 +43,25 @@ export default {
         {
           nftImage:null,
           authorImage:"",
-          authorName:null,
+          authorName:'1号',
+          nftAuthorSeq:null,
+        },
+        {
+          nftImage:null,
+          authorImage:"",
+          authorName:'2号',
+          nftAuthorSeq:null,
+        },
+        {
+          nftImage:null,
+          authorImage:"",
+          authorName:'3号',
+          nftAuthorSeq:null,
+        },
+        {
+          nftImage:null,
+          authorImage:"",
+          authorName:'4号',
           nftAuthorSeq:null,
         },
       ]

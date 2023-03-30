@@ -11,7 +11,7 @@
                                     <h4 class="hero-author-title mb-1 text-white">{{ title }}</h4>
                                     <p class="hero-author-username mb-1 text-white">@{{ username }}</p>
                                     <div class="d-flex align-items-center" v-if="isCopyInput">
-                                        <input type="text" class="copy-input text-white" style="max-width:3750px; width:390px" v-model="address" id="copy-input" readonly>
+                                        <input type="text" class="copy-input text-white" style="max-width:3750px; width:390px" :value="address" @input="$emit('update:address', $event.target.value)" id="copy-input" readonly>
                                         <div class="tooltip-s1">
                                             <button v-clipboard:copy="address" v-clipboard:success="onCopy"  class="copy-text text-white ms-2" type="button">
                                                 <span class="tooltip-s1-text tooltip-text">Copy</span>
