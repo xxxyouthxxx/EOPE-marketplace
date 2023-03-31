@@ -274,16 +274,16 @@ let SectionData = {
   },
   // Product data
   productData: {
-    title: "Trending Auctions",
-    content: "Here are Treding Auctions. You can explore items in Unique's Market!.Click to go to the product detail page. ",
+    title: "热门作品",
+    content: "这里是 Treding 拍卖。您可以在 EPOH 的市场中探索商品！点击进入商品详情页面。 ",
     contentTwo: "Explore on the world's best NFT marketplace with our beautiful NFT products. We want to be a part of your smile.",
-    btnText: "View all auctions",
+    btnText: "查看所有拍卖",
     btnLink: "/explore",
     btnLinkTwo: "/explore-v3",
     btnLinkThree: "/explore-v4",
     btnLinkFour: "/explore-v5",
     btnLinkFive: "/explore-v6",
-    btnTextTwo: "Load More",
+    btnTextTwo: "加载更多",
     meta: "NTFs Products",
     products: [
       {
