@@ -77,10 +77,10 @@ let SectionData = {
     // 面包屑导航（Breadcrumb）数据进行定义和定制，面包屑导航在网页设计中是一种非常常见的导航形式，它能够有效地辅助用户理解当前页面的位置和层级关系
     breadcrumbData: {
       breadcrumbList: {
-        title: "Explore",
+        title: "探索",
         navList: [
           {
-            title: "Explore",
+            title: "探索",
           },
         ],
       },
@@ -109,18 +109,18 @@ let SectionData = {
         ],
       },
       breadcrumbListFive: {
-        title: "Private Gallery",
+        title: "私人收藏",
         navList: [
           {
-            title: "Private Gallery",
+            title: "私人收藏",
           },
         ],
       },
       breadcrumbListExhibition: {
-        title: "Exhibition",
+        title: "展览",
         navList: [
           {
-            title: "Exhibition",
+            title: "展览",
           },
         ],
       },
@@ -207,11 +207,11 @@ let SectionData = {
   ],
   // Header data
   headerData: {
-    // 헤더 목록 리스트
+    // 头列表列表
     btnText: "MyPage",
     inputPlaceholderText: "Search item here...",
     menuList: {
-      title: "Home",
+      title: "主页",
       navList: [
         {
           id: 1,
@@ -221,27 +221,27 @@ let SectionData = {
       ],
     },
     menuList2: {
-      title: "Exhibition",
+      title: "展览",
       navList: [
         {
           id: 1,
-          title: "Exhibition",
+          title: "展览",
           path: "/exhibition",
         },
         {
           id: 2,
-          title: "Private Gallery",
+          title: "私人收藏",
           path: "/privateGallery",
           badgeClass: "badge text-primary bg-primary-50",
         },
       ],
     },
     menuList3: {
-      title: "Market",
+      title: "市场",
       navList: [
         {
           id: 1,
-          title: "Explore",
+          title: "探索",
           path: "/explore",
         },
         {
@@ -252,21 +252,21 @@ let SectionData = {
       ],
     },
     menuList4: {
-      title: "Mypage",
+      title: "我的页面",
       navList: [
         {
           id: 1,
-          title: "profile",
+          title: "总览",
           path: "/profile",
         },
       ],
     },
     menuList5: {
-      title: "Login",
+      title: "登录",
       navList: [
         {
           id: 1,
-          title: "login",
+          title: "登录",
           path: "/login",
         },
       ],

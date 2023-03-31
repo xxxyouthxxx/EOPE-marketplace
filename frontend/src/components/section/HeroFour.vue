@@ -6,7 +6,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb breadcrumb-s1 justify-content-center mt-3 mb-0">
                         <li class="breadcrumb-item">
-                            <router-link to="/">Home</router-link>
+                            <router-link to="/">主页</router-link>
                         </li>
                         <li class="breadcrumb-item" v-for="(list, i) in lists" :key="i">
                             {{ list.title }}
