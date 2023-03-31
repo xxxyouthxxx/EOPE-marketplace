@@ -5535,7 +5535,7 @@ let SectionData = {
             path: "/",
           },
           {
-            title: "Blog",
+            title: "博客",
             path: "/",
           },
           {
