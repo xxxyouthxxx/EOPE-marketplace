@@ -1,6 +1,6 @@
 <template>
   <router-link to="/" class="logo-link" :class="classname">
-    <p class="logo">EPOH</p>
+    <p class="logo">Hope of Pixel</p>
     <!-- <img class="logo-dark logo-img" :src="require('@/images/logo-black.png')" alt="logo" /> -->
     <!-- <img class="logo-light logo-img" :src="require('@/images/logo-white.png')" alt="logo" /> -->
   </router-link>

@@ -6,7 +6,7 @@
           <div class="footer-item mb-5 mb-lg-0">
             <!-- logo link -->
             <router-link to="/" class="logo-link" :class="classname">
-              <p class="logo">Unique</p>
+              <p class="logo">Hope Of Pixel</p>
             </router-link>
             <p class="my-4 footer-para" v-if="SectionData.footerData.content">{{ SectionData.footerData.content }}</p>
             <ul class="styled-icon">
@@ -20,7 +20,7 @@
                 <a href="#"><em class="icon ni ni-instagram"></em></a>
               </li>
               <li>
-                <a href="#"><em class="icon ni ni-pinterest"></em></a>
+                <a href="#"><em class="icon ni ni-emails"></em></a>
               </li>
             </ul>
           </div>

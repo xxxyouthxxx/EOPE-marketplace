@@ -1582,35 +1582,35 @@ let SectionData = {
   },
   // how It Work Data
   howItWorkData: {
-    title: "Create and sell your NFTs",
-    content: "Welcome to Unique! In Unique, You can set up your wallet, create collection, mint your NFTs and sale",
-    titleTwo: "Mint, Buy and Sell or Just Launch <br> Your Own NFT Store",
-    titleThree: "Get Started in 3 simple steps",
-    btnText: "Create Store",
+    title: "🌏创建你的账号，参与进来🌏",
+    content: "欢迎来到🌌EPOH🌌！这里是一个空白的像素世界，甚至连初始头像都没有，但是只要你们参与进来，这个世界会慢慢好的~",
+    // titleTwo: "Mint, Buy and Sell or Just Launch <br> Your Own NFT Store",
+    // titleThree: "Get Started in 3 simple steps",
+    // btnText: "Create Store",
     howItWorkList: [
       {
         id: 1,
-        icon: "icon ni ni-wallet icon-lg icon-circle shadow-sm icon-wbg mx-auto mb-4 text-primary",
-        title: "Set up your wallet",
-        content: "Once you’ve set up your wallet of choice, connect it to EnftyMart by clicking the",
+        icon: "icon ni ni-user-add icon-lg icon-circle shadow-sm icon-wbg mx-auto mb-4 text-primary",
+        title: "🌒创建一个账号🌓",
+        content: "只要你创建一个账号，你就可以开始参与到这个世界的创建中",
       },
-      {
+      { 
         id: 2,
-        icon: "icon ni ni-file-text icon-lg icon-circle shadow-sm icon-wbg mx-auto mb-4",
-        title: "Create collection",
-        content: 'Click My Collections and set up your collection. Add social links, a description',
+        icon: "icon ni ni-laptop icon-lg icon-circle shadow-sm icon-wbg mx-auto mb-4",
+        title: "🌔大展宏图🌕",
+        content: '现在你就是这个世界的造物主(之一)，当然你也可以当一个混蛋去毁灭别人的作品，谁知道会怎么样呢',
       },
       {
         id: 3,
-        icon: "icon ni ni-camera icon-lg icon-circle shadow-sm icon-wbg mx-auto mb-4",
-        title: "Add your NFTs",
-        content: "Upload your work (image, video, audio, or 3D art), add a title and description",
+        icon: "icon ni ni-eye icon-lg icon-circle shadow-sm icon-wbg mx-auto mb-4",
+        title: "🌝查看你的贡献🌖",
+        content: "你可以在自己的主页中看见自己在这个世界中放置了多少个像素，提醒你一句，这个世界有其他造物主！",
       },
       {
         id: 4,
-        icon: "icon ni ni-money icon-lg icon-circle shadow-sm icon-wbg mx-auto mb-4",
-        title: "List them for sale",
-        content: "Choose between auctions, fixed-price listings, and declining-price listings.",
+        icon: "icon ni ni-globe icon-lg icon-circle shadow-sm icon-wbg mx-auto mb-4",
+        title: "🌗一年四季🌘",
+        content: "我们每一年都有四季，这里也一样！每个季度的主题也不一样...已经过去的季节可可以在探索中回顾",
       },
     ],
     howItWorkListTwo: [
@@ -5472,40 +5472,24 @@ let SectionData = {
   },
   // footer data
   footerData: {
-    content: "The world's first and largest digital marketplace for crypto collectibles and non-fungible tokens (NFTs).",
+    content: "我的愿景：让在个体之间的交流中，充满着彼此创新、思想碰撞，从而形成一种富有包容性和理解力的新型社交结构。",
     footerList: [
       {
         id: 1,
-        title: "Marketplace",
+        title: "市场",
         navList: [
           {
-            title: "All NFTs",
+            title: "全部系列",
             path: "/explore",
-          },
-          {
-            title: "Art",
-            path: "/explore",
-          },
-          {
-            title: "Music",
-            path: "/explore",
-          },
-          {
-            title: "Domain Names",
-            path: "/explore",
-          },
-          {
-            title: "Virtual World",
-            path: "/explore",
-          },
+          }
         ],
       },
       {
         id: 2,
-        title: "My Account",
+        title: "我的账号",
         navList: [
           {
-            title: "Profile",
+            title: "概览",
             path: "/",
           },
           {
@@ -5528,10 +5512,10 @@ let SectionData = {
       },
       {
         id: 3,
-        title: "Company",
+        title: "社区",
         navList: [
           {
-            title: "About",
+            title: "关于",
             path: "/",
           },
           {
@@ -5539,11 +5523,11 @@ let SectionData = {
             path: "/",
           },
           {
-            title: "Contact",
+            title: "联系我",
             path: "/",
           },
           {
-            title: "Careers",
+            title: "帮助",
             path: "/",
           },
         ],
@@ -5551,17 +5535,13 @@ let SectionData = {
     ],
     footerListTwo: [
       {
-        title: "Explore",
+        title: "探索",
         path: "/explore",
       },
       {
-        title: "Login",
+        title: "登录",
         path: "login",
-      },
-      {
-        title: "Wallet",
-        path: "wallet",
-      },
+      }
     ],
   },
   createNftModal: {

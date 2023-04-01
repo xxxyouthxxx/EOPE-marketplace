@@ -204,7 +204,6 @@
           <div class="text-center mt-4 mt-md-5">
             <Pagination :records="this.total" v-model="page" :per-page="perPage"> 1</Pagination>
           </div>
-          <!-- 리스트 띄우기 끝 -->
           <!-- end col-lg-4 -->
         </div>
         <!-- row -->
