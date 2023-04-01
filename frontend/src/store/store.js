@@ -4467,10 +4467,10 @@ let SectionData = {
     content: "Your email address will not be published. Required fields are marked *",
   },
   loginData: {
-    title: "Login",
-    btnText: "Login Now",
-    haveAccountText: "Don't have an account",
-    btnTextTwo: "Sign Up",
+    title: "登录",
+    btnText: "现在登录",
+    haveAccountText: "我还没有账号",
+    btnTextTwo: "去注册",
     btnTextLink: "register",
     btns: [
       {
@@ -4524,11 +4524,11 @@ let SectionData = {
   // register data
   registerData: {
     img: require("@/images/thumb/remote-2.png"),
-    title: 'Sign Up to <span class="text-primary">Unique</span>',
+    title: '在 <span class="text-primary">Hope Of Pixel</span> 中注册',
     subTitle: "Fill up the below fields to create an account",
     termText: "By signing up, you agree to our Terms and conditions and Privacy Policy",
-    btnText: "Create an Account",
-    haveAccountText: "Already have an account",
+    btnText: "创建",
+    haveAccountText: "已经有了一个账户",
     btnTextTwo: "Login",
     btnTextLink: "login",
     btns: [

@@ -14,7 +14,7 @@
           <!-- end form-floating -->
           <div class="form-floating mb-4">
             <input type="password" class="form-control password" id="password" placeholder="Password" v-model="credentials.memberPassword" @keyup.enter="login(credentials)" autocomplete="off" />
-            <label for="password">Password</label>
+            <label for="password">密码</label>
             <a href="password" class="password-toggle" title="Toggle show/hide pasword">
               <em class="password-shown ni ni-eye-off"></em>
               <em class="password-hidden ni ni-eye"></em>
@@ -24,9 +24,9 @@
           <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="logMeIn" />
-              <label class="form-check-label form-check-label-s1" for="logMeIn"> Remember me </label>
+              <label class="form-check-label form-check-label-s1" for="logMeIn"> 记住我 </label>
             </div>
-            <router-link to="login" class="btn-link form-forget-password">Forgot Password</router-link>
+            <router-link to="login" class="btn-link form-forget-password">忘记密码</router-link>
           </div>
           <button class="btn btn-dark w-100" type="submit" @click="login(credentials)">{{ SectionData.loginData.btnText }}</button>
           <!-- <span class="d-block my-4">— or login with —</span>

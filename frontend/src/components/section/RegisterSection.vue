@@ -14,24 +14,24 @@
                   <input type="text" class="form-control" id="userName" placeholder="ID" v-model="credentials.memberId" autocomplete="off" />
                 </div>
                 <div class="mb-4">
-                  <h4 class="mb-2">Password</h4>
-                  <input type="password" class="form-control password" id="password" placeholder="Password" v-model="credentials.memberPassword" autocomplete="off" />
+                  <h4 class="mb-2">密码</h4>
+                  <input type="password" class="form-control password" id="password" placeholder="在此输入密码" v-model="credentials.memberPassword" autocomplete="off" />
                 </div>
                 <!-- end form-floating -->
 
-                <div class="mb-4">
+                <!-- <div class="mb-4">
                   <h5 class="mb-3">Upload file</h5>
                   <div class="file-upload-wrap">
                     <p class="file-name mb-4" id="file-name">PNG, GIF, WEBP, MP4 or MP3. Max 100mb.</p>
                     <input id="file-upload" class="file-upload-input" data-target="file-name" type="file" enctype="multipart/form-data" @change="selectFile" hidden />
                     <label for="file-upload" class="input-label btn btn-dark">Choose File</label>
                   </div>
-                </div>
+                </div> -->
               </div>
               <!-- bio start -->
               <div class="mb-4 pb-4 container">
-                <h4 class="mb-2">Bio</h4>
-                <textarea type="password" class="form-control" style="height: 100%" id="bio" placeholder="Input your Biography" v-model="credentials.memberBio" autocomplete="off"></textarea>
+                <h4 class="mb-2">简介</h4>
+                <textarea type="password" class="form-control" style="height: 100%" id="bio" placeholder="介绍一下你自己吧" v-model="credentials.memberBio" autocomplete="off"></textarea>
                 <div class="my-3">
 
                   <button class="btn btn-dark d-flex" style="margin-left: auto" type="submit" @click="signup(credentials)">{{ SectionData.registerData.btnText }}</button>

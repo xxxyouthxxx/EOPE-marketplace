@@ -9,22 +9,22 @@
         <button type="button" class="icon-btn icon-btn-s1" data-bs-toggle="dropdown"><em class="ni ni-user"></em></button>
         <ul class="dropdown-menu card-generic card-generic-s3 dropdown-menu-end mt-2">
           <li>
-            <h6 class="dropdown-header">Hello {{ username }}!</h6>
+            <h6 class="dropdown-header">你好 {{ username }}!</h6>
           </li>
           <!-- <li v-for="list in SectionData.authorNav" :key="list.id"><router-link class="dropdown-item card-generic-item" :to="list.path"><em class="ni me-2" :class="list.icon"></em>{{ list.title }}</router-link></li> -->
           <li>
-            <p class="dropdown-item card-generic-item" @click="moveToProfile()"><em class="ni me-2 ni-user"></em>Profile</p>
+            <p class="dropdown-item card-generic-item" @click="moveToProfile()"><em class="ni me-2 ni-user"></em>个人信息</p>
           </li>
           <!-- <li><router-link class="dropdown-item card-generic-item" :to="`/account/${userId}`"><em class="ni me-2 ni-setting"></em>Account Settings</router-link></li> -->
           <li>
-            <a href="#" class="dropdown-item card-generic-item theme-toggler" title="Toggle Dark/Light mode"><em class="ni ni-moon me-2"></em> Dark Mode</a>
+            <a href="#" class="dropdown-item card-generic-item theme-toggler" title="Toggle Dark/Light mode"><em class="ni ni-moon me-2"></em> 夜间模式</a>
           </li>
           <li><hr class="dropdown-divider" /></li>
           <li v-if="isLogin">
-            <router-link class="dropdown-item card-generic-item" @click="logout" to="/"><em class="ni ni-power me-2"></em>Logout</router-link>
+            <router-link class="dropdown-item card-generic-item" @click="logout" to="/"><em class="ni ni-power me-2"></em>退出账号</router-link>
           </li>
           <li v-else>
-            <router-link class="dropdown-item card-generic-item" to="/login"><em class="ni ni-power me-2"></em>Login</router-link>
+            <router-link class="dropdown-item card-generic-item" to="/login"><em class="ni ni-power me-2"></em>登录</router-link>
           </li>
         </ul>
       </li>
