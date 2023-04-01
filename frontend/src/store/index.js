@@ -118,7 +118,7 @@ export default createStore({
   actions: {
     // 这里的方法是登录的方法，第一个参数是context，我们可以通过context.state获取stat
     login: function ({ commit }, credentials) {
-      console.log(credentials, "证书");
+      console.log(credentials, "credentials");
       // 调用axios的post方法
       axios({
         method: "post",  // 请求方法
@@ -145,8 +145,8 @@ export default createStore({
             router.push({ name: "Home" });
           }
         })
-        .catch(() => {
-          alert("登录信息不匹配。");
+        .catch((err) => {
+          alert(err);
         });
     },
     // logout用于退出登录，我们将token从localStorage中移除，同时将state中的token置为空
