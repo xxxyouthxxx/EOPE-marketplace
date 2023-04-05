@@ -165,6 +165,7 @@ export default createStore({
     // FormData对象用于处理多部分数据，可以让我们方便地向服务器传递包含文件上传的表单数据。
     // axios将该对象作为data属性的值传递给POST请求，发送给服务器进行处理。
     signup: function ({ commit }, credentials) {
+      console.log(credentials, "credentials");
       let data = new FormData();
       data.append("memberId", credentials.memberId);
       data.append("memberPassword", credentials.memberPassword);
@@ -187,54 +188,7 @@ export default createStore({
           alert("密码不匹配或您已经注册。");
         });
     },
-    // 修改钱包地址
-    myAddress: function ({ commit }, credentials) {
-      let address = credentials;
-      axios({
-        method: "PUT",
-        url: `${SERVER_URL}/api/members/wallet`,
-        data: {
-          wallet: address,
-        },
-        headers: {
-          Authorization: this.state.authToken,
-        },
-      })
-        .then((res) => {
-          console.log("成功");
-        })
-        .catch(() => {
-          alert("失败");
-        });
-      commit("SET_ADDRESS", address);
-    },
-    async wallet({ commit }) {
-      console.log("실행은?");
-      let newAddress = await web3.eth.accounts.create();
-      let myAddress = await commit("SET_ADDRESS", newAddress.address);
-      alert("Warning: keep your private key safely \n Private key : " + newAddress.privateKey);
-      // let getbalance = await web3.eth.getBalance(newAddress.address);
-      // await console.log(getbalance, "계좌 조회");
-      // await console.log(newAddress.address, "잘가나용?");
-      await console.log(newAddress, "계좌정보");
-      await console.log(this.state.authToken, "토큰은요?");
-      await axios({
-        method: "PUT",
-        url: `${SERVER_URL}/api/members/wallet`,
-        data: {
-          wallet: newAddress.address,
-        },
-        headers: {
-          Authorization: this.state.authToken,
-        },
-      })
-        .then((res) => {
-          console.log("성공");
-        })
-        .catch(() => {
-          alert("실패");
-        });
-    },
+    
   },
   // getter属性，用于获取当前用户的登录状态、请求头部信息和用户名信息。
   getters: {

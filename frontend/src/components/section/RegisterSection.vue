@@ -17,6 +17,10 @@
                   <h4 class="mb-2">密码</h4>
                   <input type="password" class="form-control password" id="password" placeholder="在此输入密码" v-model="credentials.memberPassword" autocomplete="off" />
                 </div>
+                <div class="mb-4">
+                  <h4 class="mb-2">邮箱</h4>
+                  <input type="email" class="form-control" id="email" placeholder="在此输入邮箱" v-model="credentials.memberEmail" autocomplete="off" />
+                </div>
                 <!-- end form-floating -->
 
                 <!-- <div class="mb-4">
@@ -76,14 +80,14 @@ export default {
         memberId: null,
         memberPassword: null,
         memberBio: null,
-        file: null,
+        memberEmail: null,
       },
     };
   },
   methods: {
-    selectFile(data) {
-      this.credentials.file = data.target.files[0];
-    },
+    // selectFile(data) {
+    //   this.credentials.file = data.target.files[0];
+    // },
     ...mapActions(["signup"]),
   },
   mounted() {

@@ -99,7 +99,7 @@ const initBans = async (blacklistPath) => {
 })();
 
 
-// .git-credentials 是 Git 的凭证存储文件，用于存储访问远程 Git 存储库所需的用户名和密码等凭据信息。将 ORIGIN 设置为远程 Git 存储库的 URL
+// .git-credentials 是 Git 的凭证存储文件，用于存储访问远程 Git 存储库所需的用户名和等凭据信息。将 ORIGIN 设置为远程 Git 存储库的 URL
 let ORIGIN = null;
 async function fetchOrigin() {
   try {
