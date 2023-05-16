@@ -68,15 +68,12 @@ export default {
         },
       })
       .then((res)=> {
-        console.log(res.data,'userInfo')
-        console.log(res.data.regDt,'userInfodddd')
-        console.log(res.data.memberAddress,'userInfoxxxxx')
-        this.member.memberSeq = res.data.memberSeq
-        this.member.memberAddress = res.data.memberAddress
-        this.member.memberId = res.data.memberId
-        this.member.memberBio = res.data.memberBio
-        this.member.regDt = res.data.regDt
-        this.member.profileImageUrl = `https://j6e205.p.ssafy.io/${res.data.profileImageUrl}`
+        this.member.memberSeq = res.data.user_id
+        this.member.memberAddress = '地址'
+        this.member.memberId = res.data.username
+        this.member.memberBio = res.data.bio
+        this.member.regDt = res.data.createtime
+        this.member.profileImageUrl = res.data.avatar
         if (res.data.authority == 0) {
           this.grade = "Private Artist";
         }

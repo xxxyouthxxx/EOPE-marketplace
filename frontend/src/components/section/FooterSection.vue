@@ -11,15 +11,6 @@
             <p class="my-4 footer-para" v-if="SectionData.footerData.content">{{ SectionData.footerData.content }}</p>
             <ul class="styled-icon">
               <li>
-                <a href="#"><em class="icon ni ni-twitter"></em></a>
-              </li>
-              <li>
-                <a href="#"><em class="icon ni ni-facebook-f"></em></a>
-              </li>
-              <li>
-                <a href="#"><em class="icon ni ni-instagram"></em></a>
-              </li>
-              <li>
                 <a href="#"><em class="icon ni ni-emails"></em></a>
               </li>
             </ul>

@@ -2362,24 +2362,9 @@ let SectionData = {
       links: [
         {
           class: "ni-globe",
-          title: "kamran.bd.com",
-          path: "",
-        },
-        {
-          class: "ni-facebook-f",
-          title: "Facebook",
-          path: "",
-        },
-        {
-          class: "ni-twitter",
-          title: "Twitter",
-          path: "",
-        },
-        {
-          class: "ni-instagram",
-          title: "Instagram",
-          path: "",
-        },
+          title: "yooch.top",
+          path: "wwww.yooch.top",
+        }
       ],
     },
     sidebarWidgetThree: {

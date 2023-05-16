@@ -87,6 +87,18 @@ router.post('/login', function(req, res) {
         }
     });
 });
-router.get('/api/members/profile/:id',)
+router.get('/profile/:id', function(req,res){
+    const user_id = req.params.id
+    const sql = 'SELECT * FROM user_info WHERE user_id = ?';
+    db.query(sql, [user_id], (err, results) => {
+        if (err) {
+            console.log('Failed to query user_info table');
+            throw err;
+        } else{
+            console.log('result[0]:',results[0]);
+            res.json(results[0]);
+        }
+    })
+})
 module.exports = router;
 
