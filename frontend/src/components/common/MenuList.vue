@@ -15,12 +15,15 @@
     <li class="menu-item">
       <router-link :to="SectionData.headerData.menuList3.navList[0].path" class="menu-link">{{ SectionData.headerData.menuList3.title }}</router-link>
     </li>
-    <li class="menu-item" v-if="isLogin">
+    <li class="menu-item">
+      <router-link :to="SectionData.headerData.menuList4.navList[0].path" class="menu-link">{{ SectionData.headerData.menuList4.title }}</router-link>
+    </li>
+    <!-- <li class="menu-item" v-if="isLogin">
       <router-link to="" class="menu-link" @click="logout">Logout</router-link>
     </li>
     <li class="menu-item" v-else>
       <router-link :to="SectionData.headerData.menuList5.navList[0].path" class="menu-link">{{ SectionData.headerData.menuList5.title }}</router-link>
-    </li>
+    </li> -->
     <!-- <li>
       <button @click="wallet">wallet</button>
     </li> -->
@@ -42,9 +45,6 @@ export default {
   },
   computed: {
     ...mapGetters(["isLogin"]),
-  },
-  methods: {
-    ...mapActions(["logout", "wallet"]),
-  },
+  }
 };
 </script>

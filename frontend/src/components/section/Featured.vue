@@ -44,7 +44,7 @@ export default {
           nftImage:'https://pic.imgdb.cn/item/640eb292f144a0100710079a.png',
           authorImage:"https://pic.imgdb.cn/item/63faf2daf144a01007c5728a.jpg",
           authorName:'1号',
-          nftAuthorSeq:null,
+          nftAuthorSeq:1,
         },
         {
           nftImage:'https://pic.imgdb.cn/item/642533efa682492fccf7412f.jpg',

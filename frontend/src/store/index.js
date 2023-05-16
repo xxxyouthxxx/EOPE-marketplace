@@ -3,13 +3,12 @@ import axios from "axios";
 import createPersistedState from "vuex-persistedstate";
 import router from "@/router/index.js";
 import Web3 from "web3";
+import qs from 'qs'
+
 // import getWeb3 from "../utils/getWeb3;";
 const SERVER_URL = process.env.VUE_APP_SERVER_URL;
 // const SERVER_URL = http://localhost:8081;
 
-const GANACHE_SERVER_URL = "http://20.196.209.2:8545";
-
-let web3 = new Web3(new Web3.providers.HttpProvider(GANACHE_SERVER_URL));
 // 下面的 createStore 是用于创建一个 store 对象，这个对象是用于存储数据的
 export default createStore({
   plugins: [createPersistedState()],  // localStorage的存储，createPersistedState()是一个插件,用于将vuex中的数据存储到localStorage中
@@ -104,7 +103,6 @@ export default createStore({
 
     SET_ADDRESS: function (state, newAddress) {
       state.myAddress = newAddress;
-      console.log(state.myAddress, typeof state.myAddress);
       // return newAddress.address;
     },
     SET_ID: function (state, newId) {
@@ -116,36 +114,33 @@ export default createStore({
   },
   // actions内存放的是方法
   actions: {
-    // 这里的方法是登录的方法，第一个参数是context，我们可以通过context.state获取stat
+    // 这里的方法是登录的方法，第一个参数是context，我们可以通过context.state获取state
     login: function ({ commit }, credentials) {
       console.log(credentials, "credentials");
       // 调用axios的post方法
       axios({
         method: "post",  // 请求方法
         url: `${SERVER_URL}/api/members/login`,  // 这里是我们的接口地址
-        data: {
+        data:{
           // 这里是我们要传递的参数
           memberId: credentials.memberId,
           memberPassword: credentials.memberPassword,
-        },
+        }
       })
         .then((res) => {  // 这里是我们请求成功后返回的数据
-          console.log(res, "我在这里"); // 我们可以在控制台打印一下，看看我们返回的数据
-          if (res.data.memberAddress) {  // 如果返回的数据中有token，那么就将token存储到localStorage中
-            commit("SET_TOKEN", res.headers.authorization); 
+          console.log("res:", res.data.status);
+          if (res.data.status == 0) {  // 如果返回的数据中有token，那么就将token存储到localStorage中
+            commit("SET_TOKEN", res.data.Authorization); 
             commit("SET_USERNAME", credentials); 
-            commit("SET_ADDRESS", res.data.memberAddress); 
-            commit("SET_ID", res.data.memberSeq);
+            // commit("SET_ADDRESS", res.data.memberAddress); 
+            commit("SET_ID", res.data.user_id);
             router.push({ name: "Home" });
-          } else { // 否则通过dispatch调用wallet获取token
-            this.dispatch("wallet");
-            commit("SET_TOKEN", res.headers.authorization);
-            commit("SET_USERNAME", credentials);
-            commit("SET_ID", res.data.memberSeq);
-            router.push({ name: "Home" });
+          } else {
+            alert("抱歉，您的帳號或密碼錯誤"); 
           }
         })
         .catch((err) => {
+          console.log(err);
           alert(err);
         });
     },
@@ -166,26 +161,26 @@ export default createStore({
     // axios将该对象作为data属性的值传递给POST请求，发送给服务器进行处理。
     signup: function ({ commit }, credentials) {
       console.log(credentials, "credentials");
-      let data = new FormData();
-      data.append("memberId", credentials.memberId);
-      data.append("memberPassword", credentials.memberPassword);
-      data.append("memberBio", credentials.memberBio);
-      data.append("profileImage", credentials.file);
-      // console.log(credentials, "credentials");
       axios({
         method: "post",
         url: `${SERVER_URL}/api/members/register`,
         headers: {
-          "Content-Type": "multipart/form-data",
+          "Content-Type": "application/json",
         },
-        data: data,
+        data: {
+          memberId:credentials.memberId,
+          memberPassword: credentials.memberPassword,
+          memberBio: credentials.memberBio,
+          memberEmail: credentials.memberEmail,
+        },
       })
         .then((res) => {
-          console.log("账户创建成功");
-          this.dispatch("login", credentials);
+          console.log('账户创建成功');
+          this.dispatch('login', credentials);
         })
-        .catch(() => {
-          alert("密码不匹配或您已经注册。");
+        .catch((err) => {
+          console.log(err)
+          alert("出错");
         });
     },
     

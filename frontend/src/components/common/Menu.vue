@@ -29,12 +29,12 @@
         </ul>
       </li>
       <li>
-        <!-- 로그인 부분 해결되면 밑에꺼 사용 start-->
+        <!-- 登录部分解决后，请使用下面的 start-->
         <!-- <li v-if="this.$store.state.isLogin == false"><ButtonLink :text="SectionData.headerData.btnText" link="/wallet" classname="btn" :class="classname"></ButtonLink></li>
       <li v-else>
         <ButtonLink :text="SectionData.headerData.btnText" link="/create" classname="btn" :class="classname"></ButtonLink>
       </li> -->
-        <!-- 로그인 부분 해결되면 사용할 end -->
+        <!-- 登录部分解决后使用 end -->
         <!-- <ThemeSwitcher></ThemeSwitcher>/ -->
       </li>
     </ul>
@@ -113,6 +113,8 @@ export default {
   methods: {
     ...mapActions(["logout", "wallet"]),
     moveToProfile() {
+      console.log('this.isLogin', this.isLogin);
+      console.log('this.userId', this.userId);
       if (this.isLogin) {
         this.$router.push({
           name: "profile",

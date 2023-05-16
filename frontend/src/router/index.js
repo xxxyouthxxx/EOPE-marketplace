@@ -93,7 +93,11 @@ const routes = [
     path: "/privateCreate",
     name: "PrivateCreate",
     component: () => import("../pages/PrivateCreate.vue"),
-  },
+  },{
+    path: "/canvasworld",
+    name: "canvasworld",
+    component: () => import("../pages/Canvas.vue"),
+  }
 ];
 
 const router = createRouter({

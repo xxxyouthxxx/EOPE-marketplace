@@ -1,11 +1,11 @@
 CREATE TABLE `user_info` (
-  `user_id` int NOT NULL PRIMARY KEY,
+  `user_id` int NOT NULL PRIMARY KEY  AUTO_INCREMENT,
   `username` varchar(30) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(100) DEFAULT NULL,
   `avatar` varchar(500) DEFAULT NULL,
   `createtime` datetime DEFAULT NULL,
-  `bio` varchar(1024) DEFAULT NULL
+  `bio` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
 );
 
 CREATE TABLE `canvas_theme` (

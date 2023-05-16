@@ -34,43 +34,43 @@ let SectionData = {
   },
   // Hero data three
   heroDataThree: {
-    title: "Discover rare artworks by world class artists",
-    content: "EnftyMart, a Global B2B SaaS, empowers you to launch your own white-label NFT store or NFT Marketplace without any technical knowledge",
+    title: "在这里开始博览像素博物馆",
+    content: "我们都是用户，我们都是创作者，我们都是收藏家。我们都是像素博物馆。",
   },
   // Hero data four
   heroDataFour: {
-    title: "Explore Thousands of Digital Arts and Collectibles",
-    subTitle: "largest nft marketplace",
+    title: "在这里开始博览像素博物馆",
+    subTitle: "在这里开始博览像素博物馆",
   },
   // Hero data Five
   heroDataFive: {
-    title: "Search, Explore and Sell your Specific artworks",
-    content: "If you are working with any type of Digital NFT Marketplace, NFT Consulting, and Development Firm for every industry then EnftyMart is the best choise to launch your website.",
+    title: "在这里开始博览像素博物馆",
+    content: "我们都是用户，我们都是创作者，我们都是收藏家。我们都是像素博物馆。",
   },
   // Hero data Six
   heroDataSix: {
-    title: "Discover, collect, and sell extraordinary NFT's Assets",
-    content: "We are all new crypto-collectibles marketplace from arts, music, games to domains, and many more in the list. Now you can buy & sell rare items.",
+    title: "在这里开始博览像素博物馆",
+    content: "我们都是用户，我们都是创作者，我们都是收藏家。我们都是像素博物馆。",
   },
   // Hero data Eight
   heroDataEight: [
     {
       id: 1,
       img: require("@/images/thumb/nft-full1.jpg"),
-      title: "Discover, collect, and sell extraordinary NFT's Assets",
-      content: "Securely buy and sell unique digital collectibles. Lowest transaction costs across all NFT markets guaranteed.",
+      title: "yooch",
+      content: "yooch展览",
     },
     {
       id: 2,
       img: require("@/images/thumb/nft-fullTwo.jpg"),
-      title: "Exclusive digital asset",
-      content: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some.",
+      title: "yooooch",
+      content: "yooch展览",
     },
     {
       id: 3,
       img: require("@/images/thumb/nft-fullThree.jpg"),
-      title: "NFT Marketplace Explore, collect, and sell NFTs",
-      content: "If you are working with any type of Digital NFT Marketplace, and Development Firm for every industry then EnftyMat.",
+      title: "yooch像素博物馆",
+      content: "yooch展览",
     },
   ],
     // Breadcrumb data
@@ -186,11 +186,11 @@ let SectionData = {
       title: "Explore",
       path: "/explore",
     },
-    {
-      btnClass: "btn-lg btn-outline-dark",
-      title: "Create",
-      path: "/create",
-    },
+    // {
+    //   btnClass: "btn-lg btn-outline-dark",
+    //   title: "Create",
+    //   path: "/create",
+    // },
   ],
   // Hero btn data
   btnDataFour: [
@@ -252,12 +252,12 @@ let SectionData = {
       ],
     },
     menuList4: {
-      title: "我的页面",
+      title: "🎊画界",
       navList: [
         {
           id: 1,
-          title: "总览",
-          path: "/profile",
+          title: "🎊画界",
+          path: "/canvasworld",
         },
       ],
     },
