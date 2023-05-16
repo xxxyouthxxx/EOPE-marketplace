@@ -22,53 +22,33 @@
             <div class="gap-2x"></div>
             <!-- end gap -->
             <div class="row g-gs">
-              <div class="col-md-4" v-for="product in nftList" :key="product">
+              <div class="col-md-4" v-for="product in collect" :key="collect.collection_seq">
                 <div class="card card-full">
-                  <div class="card-image" @click="moveToDetail(product.nftSeq)">
+                  <div class="card-image" >   <!-- @click="moveToDetail(product.collection_seq)" -->
                     <!-- <img :src="product.img" class="card-img-top" alt="art image"> -->
-                    <img :src="`https://j6e205.p.ssafy.io/${product.fileUrl}`" class="card-img-top" alt="art image" />
+                    <img :src="`${product.collection_url}`" class="card-img-top" alt="art image" />
                   </div>
                   <div class="card-body p-4">
-                    <h5 class="card-title text-truncate mb-0">{{ product.nftName }}</h5>
+                    <h5 class="card-title text-truncate mb-0">{{ product.collection_name }}</h5>
                     <div class="card-author mb-1 d-flex align-items-center">
                       <span class="me-1 card-author-by">At</span>
                       <div class="custom-tooltip-wrap">
-                        <p style="font-size: 12px; font-weight: 600">{{ calculatedReplyTime(product.regDt) }}</p>
+                        <p style="font-size: 12px; font-weight: 600">{{ calculatedReplyTime(product.createtime) }}</p>
                       </div>
                       <!-- end custom-tooltip-wrap -->
                     </div>
                     <!-- end card-author -->
                     <div class="card-price-wrap d-flex align-items-center justify-content-between mb-3">
                       <div class="me-2">
-                        <span class="card-price-title">Author</span>
-                        <router-link :to="{ name: 'profile', params: { id: `${product.nftAuthorSeq}` } }">
-                          <span class="card-price-number">{{ product.nftAuthorName }}</span>
+                        <span class="card-price-title">作者</span>
+                        <router-link :to="{ name: 'profile', params: { id: `${product.user_id}` } }">
+                          <span class="card-price-number">{{ product.username}}</span>
                         </router-link>
-                      </div>
-                      <div class="text-sm-end">
-                        <span class="card-price-title">NFT Type</span>
-                        <span class="card-price-number">{{ strsplit(product.nftType) }}</span>
                       </div>
                     </div>
                     <!-- end card-price-wrap -->
                   </div>
                   <!-- end card-body -->
-                  <!-- <router-link
-                                  class="details"
-                                    :to="{
-                                      name: 'ProductDetail',
-                                      params: {
-                                          id: product.id,
-                                          title: product.title,
-                                          imgLg: product.imgLg,
-                                          metaText: product.metaText,
-                                          metaTextTwo: product.metaTextTwo,
-                                          metaTextThree: product.metaTextThree,
-                                          content: product.content,
-                                        }
-                                      }"
-                                  >
-                              </router-link> -->
                 </div>
                 <!-- end card -->
               </div>
@@ -112,7 +92,7 @@
 import SectionData from "@/store/store.js";
 export default {
   name: "ProfileSection",
-  props: ["content", "datetext", "nftList"],
+  props: ["content", "datetext", "collect"],
   data() {
     return {
       SectionData,
@@ -122,7 +102,9 @@ export default {
   methods: {
     calculatedReplyTime(res) {
       let ReplynewTime = new Date(res);
+      console.log('ReplynewTime', ReplynewTime);
       var ReplynowTime = new Date();
+      console.log('ReplynowTime', ReplynowTime);
       const milliSeconds = ReplynowTime - ReplynewTime;
       const seconds = milliSeconds / 1000;
       if (seconds < 60) return ` Just now`;

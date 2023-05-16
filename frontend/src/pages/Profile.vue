@@ -25,7 +25,7 @@
     <ProfileSection
      :content = member.memberBio
      :datetext = member.regDt
-     :nftList = nftList
+     :collect = collect
      ></ProfileSection>
     <!-- Footer  -->
     <Footer classname="bg-black on-dark"></Footer>
@@ -46,7 +46,7 @@ export default {
     return {
       SectionData,
       id: this.$route.params.id,
-      nftList: null,
+      collect: null,
       member:{
         memberSeq: 0,
         memberAddress: "",
@@ -69,7 +69,6 @@ export default {
       })
       .then((res)=> {
         this.member.memberSeq = res.data.user_id
-        this.member.memberAddress = '地址'
         this.member.memberId = res.data.username
         this.member.memberBio = res.data.bio
         this.member.regDt = res.data.createtime
@@ -85,13 +84,13 @@ export default {
     async getNft() {
       const itmes = await axios({
         method: "GET",
-        url: `${SERVER_URL}/api/nft/items/${this.member.memberAddress}`,
+        url: `${SERVER_URL}/api/collection/items/${this.member.memberSeq}`,
         headers: {
           Authorization: this.authToken,
         },
       }).then((res) => {
-        console.log(res.data, "nft");
-        this.nftList = res.data.nftList;
+        console.log("collection:",res.data);
+        this.collect = res.data ;
       });
       // this.total = this.exhibitionWorkList.length;
     },

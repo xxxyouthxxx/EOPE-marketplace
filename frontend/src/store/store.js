@@ -2255,7 +2255,7 @@ let SectionData = {
       },
     ],
     sidebarWidget: {
-      title: "About Me",
+      title: "简介",
       content: "I make art with the simple goal of giving you something pleasing to look at for a few seconds.",
       followingNum: 30,
       followingText: "Following",
@@ -2292,32 +2292,17 @@ let SectionData = {
       btnText: "View All",
     },
     sidebarWidgetTwo: {
-      title: "Links",
+      title: "链接",
       links: [
         {
           class: "ni-globe",
           title: "frenchmontana.com",
-          path: "",
-        },
-        {
-          class: "ni-facebook-f",
-          title: "Facebook",
-          path: "",
-        },
-        {
-          class: "ni-twitter",
-          title: "Twitter",
-          path: "",
-        },
-        {
-          class: "ni-instagram",
-          title: "Instagram",
-          path: "",
-        },
+          path: "www.yooch.top",
+        }
       ],
     },
     sidebarWidgetThree: {
-      title: "Joined",
+      title: "创建时间",
       date: "Septermber 13, 2021",
     },
   },
@@ -5461,7 +5446,7 @@ let SectionData = {
     footerList: [
       {
         id: 1,
-        title: "市场",
+        title: "展览",
         navList: [
           {
             title: "全部系列",
@@ -5471,32 +5456,6 @@ let SectionData = {
       },
       {
         id: 2,
-        title: "我的账号",
-        navList: [
-          {
-            title: "概览",
-            path: "/",
-          },
-          {
-            title: "My Offers",
-            path: "/",
-          },
-          {
-            title: "Activity",
-            path: "/",
-          },
-          {
-            title: "Sales & Purchase",
-            path: "/",
-          },
-          {
-            title: "Payment Methods",
-            path: "/",
-          },
-        ],
-      },
-      {
-        id: 3,
         title: "社区",
         navList: [
           {

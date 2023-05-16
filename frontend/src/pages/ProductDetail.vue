@@ -7,9 +7,9 @@
     </header>
     <div style="max-width: 1200px; margin: auto">
       <div class="loginbar d-flex justify-content-end align-items-center" style="position: sticky; top: 70px; height: 60px; padding-right: 50px">
-        <!-- sell버튼 시작 난중에 내가 이 nft의 주인이면 조건걸기 -->
+        <!-- sell在按钮开始的时候，条件是我是这个nft的拥有者 -->
         <router-link v-if="onsale === `Not for Sale` && Owner == userId" :to="{ name: 'SaleCreate', params: { id: this.$route.params.id } }" class="btn btn-dark d-block mb-2">Sell</router-link>
-        <!-- sell버튼 끝-->
+        <!-- sell按钮结束-->
       </div>
     </div>
     <div class="d-flex flex-column"></div>
@@ -22,7 +22,7 @@
                 <img :src="imgLg" />
               </div>
               <!-- end item-detail-img-container -->
-              <!-- 사진아래1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 -->
+              <!-- 在照片下1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 -->
               <div class="item-detail-tab">
                 <ul class="nav nav-tabs nav-tabs-s1" id="myTab" role="tablist">
                   <li class="nav-item" role="presentation" v-for="list in SectionData.itemDetailData.itemDetailTabNav" :key="list.id">
@@ -189,10 +189,10 @@ export default {
       marketId: null,
       id: this.$route.params.id,
       nftCA: null,
-      title: "작품 이름", // 작품이름
+      title: "工作名称", 
       imgLg: "https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/42iI/image/fgznKzwTj38hXdylF03JXH2Gv5E",
 
-      onsale: "On Sale", // 판매 중 인지
+      onsale: "On Sale",  
       price: "500 editions",
       metaTextThree: "500 editions",
       content: 'Digital-only* "CB Galaxy" style Coke Boys LA sneakers wearable in the Decentraland metaverse',
@@ -217,14 +217,14 @@ export default {
       itemDetailList: [
         {
           id: 1,
-          title: "작가 이름",
+          title: "作者姓名",
           subTitle: "Artist",
           avatar: require("@/images/thumb/avatar.jpg"),
           path: "/author",
         },
         {
           id: 2,
-          title: "보유자 이름",
+          title: "持有人名称",
           subTitle: "Owner",
           avatar: require("@/images/thumb/avatar-2.jpg"),
           path: "/author",

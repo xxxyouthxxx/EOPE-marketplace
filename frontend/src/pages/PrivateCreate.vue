@@ -10,14 +10,8 @@
     <section class="explore-section pt-4">
       <div class="container">
         <!-- filter -->
-        <div class="filter-box pb-5">
-          <h3 class="mb-4">Filter by</h3>
-          <div class="filter-btn-group">
-            <a href="#" class="btn btn-sm filter-btn" :class="tab.class" v-for="tab in filterMenu" @click.prevent="setTab(tab, tab.id)" :key="tab.id">{{ tab.title }}</a>
-          </div>
-        </div>
         <div>
-          <h3>Select Items for Gallery</h3>
+          <h3>为画廊选择项目</h3>
           <br />
         </div>
         <!-- end filter-box -->
@@ -42,15 +36,15 @@
         </div> -->
           <div class="form-item mb-4">
             <div class="mb-4">
-              <h3 class="mb-2">Title</h3>
-              <input type="text" class="form-control form-control-s1" v-model="galleryName" placeholder="Input your Private Gallery name" />
+              <h3 class="mb-2">标题</h3>
+              <input type="text" class="form-control form-control-s1" v-model="galleryName" placeholder="输入您的私人画廊名称" />
             </div>
             <div class="mb-4">
-              <h3 class="mb-2">Description</h3>
-              <textarea name="message" class="form-control form-control-s1" v-model="galleryDescription" placeholder="Explain your Private Gallery"></textarea>
+              <h3 class="mb-2">描述</h3>
+              <textarea name="message" class="form-control form-control-s1" v-model="galleryDescription" placeholder="为你的画廊添加描述"></textarea>
             </div>
           </div>
-          <button type="button" data-bs-toggle="modal" data-bs-target="#createNftModal" class="btn btn-dark d-block mb-5" @click="createGallery()">Create Item</button>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#createNftModal" class="btn btn-dark d-block mb-5" @click="createGallery()">创建项目</button>
         </form>
       </div>
       <!-- .container -->

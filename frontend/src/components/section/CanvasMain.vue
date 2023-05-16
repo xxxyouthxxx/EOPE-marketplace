@@ -20,6 +20,7 @@
 <script>
 import confetti from 'canvas-confetti'
 import axios from 'axios'
+import { mapState } from "vuex";
 export default {
   data() {
     return {
@@ -418,13 +419,14 @@ export default {
 		else if (this.colorSelected) {
 			this.set(Math.floor(this.x), Math.floor(this.y), this.PEN)
 		// 创建一个DataView对象，用于存储要发送的数据。
-		let pixelView = new DataView(new Uint8Array(6).buffer)
+		let pixelView = new DataView(new Uint8Array(7).buffer)
 		// 设置DataView的第一个字节为4，表示要发送的数据是像素数据。
 		pixelView.setUint8(0, 4)
 		// 将像素的位置坐标写入DataView的第2~5个字节中。
 		pixelView.setUint32(1, Math.floor(this.x) + Math.floor(this.y) * this.WIDTH)
 		// 将要填充的像素的颜色值写入DataView的第6个字节中。
-		pixelView.setUint8(5, this.PEN)
+		pixelView.setUint8(5, this.PEN);
+		pixelView.setUint8(6, this.userId)
 		localStorage.placed = (localStorage.placed >>> 0) + 1		
 		this.ws.send(pixelView)
     	}
@@ -563,7 +565,12 @@ export default {
         this.y -= this.mx * (d - 1) / this.z / 50
         this.pos()
     },
-  }
+  },
+  computed: {
+    ...mapState([
+      "userId"
+      ]),
+  },
   
 }
 </script>

@@ -4,7 +4,7 @@ const { createServer } = SECURE ? require('https') : require('http')
 const {WebSocketServer} = require('ws')
 const router = express.Router()
 const fs = require('fs').promises
-
+var db = require('../model/db');
 let { WIDTH, HEIGHT,PALETTE_SIZE} = require('../config.json')
 
 const app = express()
@@ -99,7 +99,12 @@ wss.on('connection', (ws, req) => {
           console.log("像素因无效的数据包长度", data.Length, "被拒绝。");
         }
         var index = data.readUInt32BE(1)
+        var posX = index % WIDTH
+        var posY = Math.floor(index / WIDTH)
+        //时间戳timestamp 获取当前时间
+        var timestamp = Math.round(new Date().getTime() / 1000)
         var color = data.readUInt8(5)
+        var user_id = data.readUInt8(6)
         if (index >= WIDTH * HEIGHT || color >= PALETTE_SIZE) {
           console.log('客户端：', address, '放置了无效的像素点', index, '颜色', color);
         }
@@ -114,14 +119,23 @@ wss.on('connection', (ws, req) => {
           ws.send(Buffer)
           return
         }
-        console.log(data);
         DistributePixelPlacement(data)
-        console.log("客户端", address, "放置了像素点", index, "颜色", color);
-        console.log("当前画布：", BOARD);
+        console.log("客户端", address, "放置了像素点", index, "颜色", color, "用户ID", user_id,"时间戳", timestamp , 'x', posX, 'y', posY);
+        saveDataToDatabase(posX, posY, color, user_id, timestamp, address)
       }
     }
   })
 })
+function saveDataToDatabase(posX, posY,color, user_id, timestamp,address) {
+  const query = `
+    INSERT INTO pixel_block (posX, posY,color, user_id, timestamp,address )
+    VALUES (?, ?, ?, ?, ?, ?)
+  `;
+  db.query(query, [ posX,  posY,  color,  user_id,  timestamp,  address], function (error, results, fields) {
+    if (error) throw error;
+    console.log('保存成功');
+  });
+}
 function distributePlayerCount() {
   var gameInfo = Buffer.alloc(5)
   gameInfo[0] = 3
@@ -134,7 +148,6 @@ function distributePlayerCount() {
 // 服务器向客户端发送像素点的分布
 function DistributePixelPlacement(pixel) {
   pixel[0] = 6 // 第一个字节表示数据类型 这里是6 服务器向客户端发送像素点的分布
-  console.log(pixel);
   for (let c of wss.clients){
     c.send(pixel)
     BOARD[pixel.readUInt32BE(1)] = pixel.readUInt8(5)

@@ -7,6 +7,7 @@ var cors = require('cors')
 var wsRouter = require('./routes/ws')
 var initPixelRouter = require('./routes/initPixel')
 var menberRouter = require('./routes/member')
+var collectionRouter = require('./routes/collection')
 var app = express();
 
 // view engine setup
@@ -29,6 +30,7 @@ app.use(cors({
 app.use('/initPixel', initPixelRouter)
 app.use('/ws', wsRouter)
 app.use('/api/members', menberRouter)
+app.use('/api/collection', collectionRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

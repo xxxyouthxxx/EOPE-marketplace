@@ -95,7 +95,6 @@ router.get('/profile/:id', function(req,res){
             console.log('Failed to query user_info table');
             throw err;
         } else{
-            console.log('result[0]:',results[0]);
             res.json(results[0]);
         }
     })
