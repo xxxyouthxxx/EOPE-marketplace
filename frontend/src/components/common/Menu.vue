@@ -29,13 +29,8 @@
         </ul>
       </li>
       <li>
-        <!-- 登录部分解决后，请使用下面的 start-->
-        <!-- <li v-if="this.$store.state.isLogin == false"><ButtonLink :text="SectionData.headerData.btnText" link="/wallet" classname="btn" :class="classname"></ButtonLink></li>
-      <li v-else>
-        <ButtonLink :text="SectionData.headerData.btnText" link="/create" classname="btn" :class="classname"></ButtonLink>
-      </li> -->
         <!-- 登录部分解决后使用 end -->
-        <!-- <ThemeSwitcher></ThemeSwitcher>/ -->
+        <ThemeSwitcher></ThemeSwitcher>
       </li>
     </ul>
   </nav>

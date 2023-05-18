@@ -237,12 +237,12 @@ let SectionData = {
       ],
     },
     menuList3: {
-      title: "市场",
+      title: "聊天室",
       navList: [
         {
           id: 1,
-          title: "探索",
-          path: "/explore",
+          title: "聊天室",
+          path: "/chatplace",
         },
         {
           id: 2,
@@ -3945,6 +3945,10 @@ let SectionData = {
     btnText: "Manage collectible type",
     // path: "/create",
     title: "Create single collectible",
+  },
+  chat:{
+    title: "Chat",
+    button_text: "发送",
   },
   // select method tab nav
   selectMethodTabNav: [

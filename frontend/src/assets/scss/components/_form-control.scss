@@ -141,6 +141,13 @@ textarea.form-control.form-textarea-s1 {
     text-align: center;
     position: relative;
 }
+.chat-wrap{
+    padding: 50px;
+    @include border-radius(6px);
+    border: dashed 3px $base-400;
+    text-align: center;
+    position: relative;
+}
 .switch {
     &-content-unlock {
         display: none;

@@ -82,7 +82,7 @@ const SERVER_URL = process.env.VUE_APP_SERVER_URL;
 import axios from "axios";
 import Web3 from "web3";
 import SectionData from "@/store/store.js";
-import getAddressFrom from "../utils/AddressExtractor";
+// import getAddressFrom from "../utils/AddressExtractor";
 // import ABI from "../../common/ABI";
 // const abi = ABI.CONTRACT_ABI.NFT_ABI;
 import SsafyNFT from "../../smart-contracts/build/contracts/SsafyNFT.json";

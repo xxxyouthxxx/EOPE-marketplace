@@ -12,8 +12,8 @@
           <div class="col-lg-8">
             <div class="section-head-sm">
               <!-- <router-link :to="SectionData.createData.path" class="btn-link fw-semibold"><em class="ni ni-arrow-left"></em> {{ SectionData.createData.btnText }}</router-link> -->
-              <router-link :to="{ name: 'Home' }" class="btn-link fw-semibold"><em class="ni ni-arrow-left"></em> Home </router-link>
-              <h1 class="mt-2">{{ SectionData.createData.title }}</h1>
+              <!-- <router-link :to="{ name: 'Home' }" class="btn-link fw-semibold"><em class="ni ni-arrow-left"></em> Home </router-link> -->
+              <h1 class="mt-2">{{ SectionData.chat.title }}</h1>
             </div>
           </div>
           <!-- end col -->
@@ -22,9 +22,9 @@
               <div class="form-item mb-4">
                 <h5 class="mb-3">Upload file</h5>
                 <div class="file-upload-wrap">
-                  <p class="file-name mb-4" id="file-name">PNG, GIF, WEBP, MP4 or MP3. Max 100mb.</p>
+                  <!-- <p class="file-name mb-4" id="file-name">PNG, GIF, WEBP, MP4 or MP3. Max 100mb.</p>
                   <input id="file-upload" class="file-upload-input" data-target="file-name" type="file" enctype="multipart/form-data" @change="selectFile" hidden />
-                  <label for="file-upload" class="input-label btn btn-dark">Choose File</label>
+                  <label for="file-upload" class="input-label btn btn-dark">Choose File</label> -->
                 </div>
               </div>
               <!-- end form-item -->
@@ -115,7 +115,7 @@ const SERVER_URL = process.env.VUE_APP_SERVER_URL;
 import axios from "axios";
 import Web3 from "web3";
 import SectionData from "@/store/store.js";
-import getAddressFrom from "../utils/AddressExtractor";
+// import getAddressFrom from "../utils/AddressExtractor";
 // import ABI from "../../common/ABI";
 // const abi = ABI.CONTRACT_ABI.NFT_ABI;
 import SsafyNFT from "../../smart-contracts/build/contracts/SsafyNFT.json";
@@ -199,9 +199,9 @@ export default {
        */
       // url:해시된, nft:이름, 작성자 일련번호
       console.log(typeof this.authorPrivateKey);
-      const checkPubKey = await getAddressFrom(this.authorPrivateKey);
-      // 내계좌 조회 1.
-      console.log(typeof checkPubKey, "체크퍼브키");
+      // const checkPubKey = await getAddressFrom(this.authorPrivateKey);
+      // // 내계좌 조회 1.
+      // console.log(typeof checkPubKey, "체크퍼브키");
       // 서버 배포 후
       const myAccount = await this.myAddress;
       console.log(typeof myAccount, "되나");

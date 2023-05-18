@@ -19,6 +19,11 @@ export default createStore({
     myAddress: null,  // 用户地址
     userId: null,     // 用户id
     password: null,   // 用户密码
+    avatarUrl: null,  // 用户头像
+    navbar: {
+      channels: true,
+      users: true,
+    },
     ExhibitionsCards: [ // 展览卡片
       {
         id: 1,
@@ -99,6 +104,9 @@ export default createStore({
     SET_USERNAME: function (state, credentials) {
       state.username = credentials.memberId;
     },
+    SET_AVATAR: function (state,  avatarUrl) {
+      state.avatarUrl = avatarUrl;
+    },
     // return newAddress.address;
 
     SET_ADDRESS: function (state, newAddress) {
@@ -114,6 +122,10 @@ export default createStore({
   },
   // actions内存放的是方法
   actions: {
+    //发送消息的方法
+    send_msg: function ({ commit }, msg) {
+      console.log(msg, "msg");
+    },
     // 这里的方法是登录的方法，第一个参数是context，我们可以通过context.state获取state
     login: function ({ commit }, credentials) {
       console.log(credentials, "credentials");
@@ -132,6 +144,7 @@ export default createStore({
           if (res.data.status == 0) {  // 如果返回的数据中有token，那么就将token存储到localStorage中
             commit("SET_TOKEN", res.data.Authorization); 
             commit("SET_USERNAME", credentials); 
+            commit("SET_AVATAR", res.data.avatar);
             // commit("SET_ADDRESS", res.data.memberAddress); 
             commit("SET_ID", res.data.user_id);
             router.push({ name: "Home" });
